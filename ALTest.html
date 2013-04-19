@@ -1,0 +1,742 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Aqualog</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+		<link rel=stylesheet href="jquery.mobile/jquery.mobile.css" />
+		<link rel="stylesheet" href="themes/Aqualog.css" />
+
+		<script src=jquery.js></script>
+		<script src=jquery.mobile/jquery.mobile.js></script>
+		<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+		
+		<style type="text/css">
+			.ui-page{
+				background: transparent url(images/background1.png);
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<!-- Splash Page -->
+		<div data-role="page" data-theme="a" id="splash" style="background-image:url('images/splash.png'); background-position:center;">
+		</div>
+		
+		<script>
+			$ (function(){
+				setTimeout(function(){
+				$.mobile.changePage("#home", "fade");
+				}, 3000);
+			});
+		</script>
+	
+		<!-- Home Page -->
+		<div data-role="page" data-theme="a" id="home">
+			<div data-role="header">
+				<h4 id="heading">Aqualog</h4>
+			</div>
+			<div data-role="content"> 
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<a data-role="button" style="height:100px" id="btn_WaterTest" href="#waterTest" data-transition="slide">Water Test</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" style="height:100px" id="btn_LogBook" href="#logBook" data-transition="slide">Log Book</a>
+					</div>
+
+					<div class="ui-block-a">
+						<a data-role="button" style="height:100px" id="btn_Profile" href="#profile" data-transition="slide">Profile</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" style="height:100px" id="btn_WishList" href="#wishList" data-transition="slide">Wish List</a>
+					</div>
+
+					<div class="ui-block-a">
+						<a data-role="button" style="height:100px" id="btn_Gallery" href="#gallery" data-transition="slide">Gallery</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" style="height:100px" id="btn_Links" href="#links" data-transition="slide">Helpful Links</a>
+					</div>
+				</div>
+			</div>
+		</div><!-- page -->
+		
+<!-- ------------------------ Water Test ---------------------------------------------------------------------------------------------------- -->	
+		
+		<!-- Water Test Page -->
+		<div data-role="page" data-theme="a" id="waterTest">
+			<div data-role="header">
+				<a data-role="button" data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext" data-transition="slide">Back</a>
+				<a data-role="button" href="#home" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-transition="flip">Home</a>	
+				<h1>Water Test</h1>
+			</div>
+			
+		<div data-role="footer" data-id="foo1" data-position="fixed">
+			<div data-role="navbar" data-iconpos="top">
+				<ul>
+					<li><a href="#profile" data-icon="gear">Profile</a></li>
+					<li><a href="#" data-icon="info" class="ui-btn-active ui-state-persist">Water Test</a></li>
+					<li><a href="#logBook" data-icon="edit">Log Book</a></li>
+					<li><a href="#wishList" data-icon="star">Wish List</a></li>
+					<li><a href="#gallery" data-icon="bars">Gallery</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->
+		
+			<!-- Page Navigation -->
+			<div data-role="content"> 
+				<!-- <a href=# data-role="button" id="createWaterTest">New Test Log</a> -->
+				<a href="#newTestForm" data-role="button" data-rel="dialog" data-transition="pop">Record New Test</a>
+				<!-- <a href=# data-role="button" id="deleteWaterTest">Delete Test History</a> -->
+				<h1>Test History</h1>
+								
+				<table data-role="table" data-theme="a">
+				</table>
+				
+			</div>
+		</div><!-- page -->
+		
+		<!-- Water Test Input Form -->
+		<div data-role="page" data-theme="a" id="newTestForm"> 
+			<div data-role="header">
+				<h1>Enter Test Results</h1>
+			</div>
+				
+			<div data-role="content">
+				<!-- <form id="newTestResults" action="" method="POST"> -->
+					<div data-role="fieldcontain">
+						<fieldset class="ui-grid-a" data-role="controlgroup">
+							<div class="ui-block-a"><label for="date">Date</label></div>
+							<div class="ui-block-b"><input type="date" name="date" id="date" value="" /></div>	
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset class="ui-grid-a" data-role="controlgroup">
+							<div class="ui-block-a"><label for="salinity">Salinity</label></div>
+							<div class="ui-block-b"><input name="" id="salinity" placeholder="" value="" type="number" /></div>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset class="ui-grid-a" data-role="controlgroup">
+							<div class="ui-block-a"><label for="ph">ph</label></div>
+							<div class="ui-block-b"><input name="" id="ph" placeholder="" value="" type="number" /></div>
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset class="ui-grid-a" data-role="controlgroup">
+							<div class="ui-block-a"><label for="ammonia">Ammonia</label></div>
+							<div class="ui-block-b"><input name="" id="ammonia" placeholder="" value="" type="number" /></div>
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset class="ui-grid-a" data-role="controlgroup">
+							<div class="ui-block-a"><label for="nitrite">Nitrite</label></div>
+							<div class="ui-block-b"><input name="" id="nitrite" placeholder="" value="" type="number" /></div>
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset class="ui-grid-a" data-role="controlgroup">
+							<div class="ui-block-a"><label for="nitrate">Nitrate</label></div>
+							<div class="ui-block-b"><input name="" id="nitrate" placeholder="" value="" type="number" /></div>
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset class="ui-grid-a" data-role="controlgroup">
+							<div class="ui-block-a"><label for="dkh">dkh (Carbonate Hardness)</label></div>
+							<div class="ui-block-b"><input name="" id="dkh" placeholder="" value="" type="number" /></div>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset class="ui-grid-a" data-role="controlgroup">
+							<div class="ui-block-a"><label for="calcium">Calcium</label></div>
+							<div class="ui-block-b"><input name="" id="calcium" placeholder="" value="" type="number" /></div>
+						</fieldset>
+					</div>
+					<a href=# data-role="button" id="newTestResult">Record Test Results</a>
+				<!--</form> -->
+			</div>
+		</div> <!-- page -->
+	
+<!-- ------------------------- Log Book -------------------------------------------------------------------------------------------------- -->
+	
+	 	<!-- Log Book Page -->
+		<div data-role="page" data-theme="a" id="logBook">
+			<div data-role="header">
+				<a data-role="button" data-rel="back" class="ui-btn-left" data-iconpos="notext" data-icon="back" data-transition="slide">Back</a>
+				<a data-role="button" href="#home" class="ui-btn-right" data-iconpos="notext" data-icon="home" data-iconpos="right" data-transition="flip">Home</a>
+				<h1>Log Book</h1>
+							
+			</div>
+		<div data-role="footer" data-id="foo1" data-position="fixed">
+			<div data-role="navbar" data-iconpos="top">
+				<ul>
+					<li><a href="#profile" data-icon="gear">Profile</a></li>
+					<li><a href="#waterTest" data-icon="info">Water Test</a></li>
+					<li><a href="#" data-icon="edit" class="ui-btn-active ui-state-persist">Log Book</a></li>
+					<li><a href="#wishList" data-icon="star">Wish List</a></li>
+					<li><a href="#gallery" data-icon="bars">Gallery</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->
+			
+			<!-- Page Navigation -->
+			<div data-role="content"> 
+				<!-- <a data-role="button" id="createLog">Create Log Book</a> -->
+				<a data-role="button" href="#logEntry" data-rel="dialog" data-transition="pop">Record New Log</a>
+				<!-- <a href=# data-role="button" id="deleteLog">Delete Log History</a> -->
+				<h1>Log Book</h1>
+				<table data-role="table" data-theme="a"></table>
+			</div>
+		</div><!-- page -->
+
+		<!-- Enter New Log Item -->
+		<div data-role="page" data-theme="a" id="logEntry">
+			<div data-role="header">
+				<h1>New Log Entry</h1>
+			</div>
+			
+			 <div data-role="content">
+				<div data-role="fieldcontain">
+					<fieldset class="ui-grid-a" data-role="controlgroup">
+						<div class="ui-block-a"><label for="logDate">Date</label></div>
+						<div class="ui-block-b"><input type="date" name="logDate" id="logDate" value="" /></div>	
+					</fieldset>
+				</div>
+				<div data-role="fieldcontain">
+					<fieldset class="ui-grid-a" data-role="controlgroup">
+						<div class="ui-block-a"><label for="newLog">Log</label></div>
+						<div class="ui-block-b"><textarea name="newLog" id="newLog" value=""></textarea></div>
+					</fieldset>
+				</div>
+				<a href=# data-role="button" id="logBookResult">Record Log Entry</a>			
+			</div>
+		</div><!-- page -->
+		
+<!-- -------------------------------- Profile ------------------------------------------------------------------------------------------ -->
+		
+		<!-- Profile Page -->
+		<div data-role="page" data-theme="a" id="profile">
+			<div data-role="header">
+				<a data-role="button" href="#home" data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext" data-transition="slide">Back</a>
+				<a data-role="button" href="#home" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-transition="flip">Home</a>
+				<h4 id="heading">Profile</h4>
+			</div>
+			
+		<div data-role="footer" data-id="foo1" data-position="fixed">
+			<div data-role="navbar" data-iconpos="top">
+				<ul>
+					<li><a href="#" data-icon="gear" class="ui-btn-active ui-state-persist">Profile</a></li>
+					<li><a href="#waterTest" data-icon="info">Water Test</a></li>
+					<li><a href="#logBook" data-icon="edit">Log Book</a></li>
+					<li><a href="#wishList" data-icon="star">Wish List</a></li>
+					<li><a href="#gallery" data-icon="bars">Gallery</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->
+
+			<div data-role="content">
+				<a data-role="button" href="#tankProfile" data-rel="dialog" data-transition="pop">Baseline Parameters</a>
+				<div data-role="fieldcontain">
+					<div data-role="collapsible" id="equipment" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+						<h3>Equipment</h3>
+						<a data-role="button" href="#addEquipment" id="addNewEq" data-rel="dialog" data-transition="pop">Add New Equipment</a>
+						<a data-role="button" href="" id="viewEq">View Current Equipment</a>
+					</div>
+				</div>
+				<div data-role="fieldcontain">
+					<div data-role="collapsible" id="livestock" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+						<h3>Livestock</h3>
+						<a data-role="button" href="#addLivestock" id="addNewLS" data-rel="dialog" data-transition="pop">Add New Livestock</a>
+						<a data-role="button" href="" id="viewLS">View Current Livestock</a>
+					</div>
+				</div>
+				
+			</div>
+		</div><!-- page -->
+		
+		<!-- Tank Profile -->
+		<div data-role="page" id="tankProfile" data-theme="a">
+			<div data-role="header">	
+				<h1>Tank Profile</h1>
+			</div>
+			<div data-role="content">
+				<div data-role="collapsible-set">
+					<div data-role="collapsible">
+						<h3>Water Type</h3>
+						<div data-role="fieldcontain" id="waterType" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+							<select name="">
+								<option value="saltWater">Salt Water</option>
+								<option value="freshWater">Fresh Water</option>
+								<option value="brackish">Brackish</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<input name="slider" value="" min="0" max="250" data-highlight="false" type="range"><br/>
+							<label for="tankVol">Tank Volume (Gallons)</label>
+						</fieldset>
+					</div>
+				</div>
+				<div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<input name="slider" value="" min="65" max="85" data-highlight="false" type="range"><br/>
+							<label for="avgTemp">Desired Temperature</label>
+						</fieldset>
+					</div>
+				</div>
+				<div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<input name="slider" value="" min="0" max="24" data-highlight="false" type="range"><br/>
+							<label for="daylight">Hours of Daylight</label>
+						</fieldset>
+					</div>
+				</div>
+				<div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<input name="slider" value="" min="6.0" max="8.5" data-highlight="false" type="range"><br/>
+							<label for="ph">Desired ph</label>
+						</fieldset>
+					</div>
+				</div>
+				<div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<input name="slider" value="" min="80" max="250" data-highlight="false" type="range"><br/>
+							<label for="ph">Carbonate Hardness (ppm)</label>
+						</fieldset>
+					</div>
+				</div>
+				<div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<input name="slider" value="" min="0" max="500" data-highlight="false" type="range"><br/>
+							<label for="calcium">Calcium (ppm)</label>
+						</fieldset>
+					</div>
+				</div>
+				<div>
+					<a data-role="button" href="" id="baseline">Set Baseline Parameters</a>
+				</div>
+			</div>	
+		</div><!-- page -->
+		
+		<!-- Add Equipment Page -->
+		<div data-role="page" id="addEquipment" data-theme="a">
+			<div data-role="header">	
+				<h1>Add Equipment</h1>
+			</div>
+			<form id="NewEqItem" action="">				
+				<div data-role="fieldcontain">
+					<label for="selectmenu5">Equipment Type</label><br>
+					<select name="New Equipment Type" data-mini="true">
+						<option value="Tank">Tank</option>
+						<option value="Stand">Stand</option>
+						<option value="Hood">Hood</option>
+						<option value="Sump">Sump</option>
+						<option value="Lighting">Lighting</option>
+						<option value="Pump">Pump</option>
+						<option value="Controller">Controller</option>
+						<option value="Filtration">Filtration</option>
+						<option value="Heater">Heater</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<label for="newEqName">Name</label>
+						<input name="New Equipment Name" id="newEqName" type="text">
+					</fieldset>
+				</div>
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<label for="newEqBrand">Brand</label>
+						<input name="New Equipment Brand" id="newEqBrand" type="text">
+					</fieldset>
+				</div>
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<label for="newEqNotes">Notes</label>
+						<input name="New Equipment Notes" id="newEqNotes" type="text">
+					</fieldset>
+				</div>
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<label for="eqDateAdded">Date Added</label>
+						<input name="Date Added" id="eqDateAdded" type="date">
+					</fieldset>
+				</div>
+				<a data-role="button" id="addNewEquipment">Add Equipment</a>
+			</form>
+		</div><!-- page -->
+		
+		<!-- Add Livestock Page -->
+		<div data-role="page" id="addLivestock" data-theme="a">
+			<div data-role="header">	
+				<h1>Add Livestock</h1>
+			</div>
+			
+			<a data-role="button" id="addNewLivestock">Add Livestock</a>
+		</div>		
+			
+<!-- ------------------------------ Gallery ------------------------------------------------------------------------------------------------ -->
+		
+		<!-- Gallery Page -->
+		<div data-role="page" data-theme="a" id="gallery">
+			<div data-role="header">
+				<a data-role="button" data-rel="back" class="ui-btn-left" data-icon="back" data-iconpos="notext" data-transition="slide">Back</a>
+				<a data-role="button" href="#home" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-transition="flip">Home</a>
+				<h1>Gallery</h1>
+			</div>
+		<div data-role="footer" data-id="foo1" data-position="fixed">
+			<div data-role="navbar" data-iconpos="top">
+				<ul>
+					<li><a href="#profile" data-icon="gear">Profile</a></li>
+					<li><a href="#waterTest" data-icon="info">Water Test</a></li>
+					<li><a href="#logBook" data-icon="edit">Log Book</a></li>
+					<li><a href="#wishList" data-icon="star">Wish List</a></li>
+					<li><a href="#" data-icon="bars"class="ui-btn-active ui-state-persist">Gallery</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->
+			<div data-role="content">   
+				<p>Gallery Content Here...</p>
+			</div>
+		</div><!-- page -->
+		
+<!-- ---------------------------- Links ---------------------------------------------------------------------------------------------------- -->
+		
+		<!-- Links Page -->
+		<div data-role="page" data-theme="a" id="wishList">
+			<div data-role="header">
+				<a data-role="button" data-rel="back" class="ui-btn-left" data-icon="back" data-transition="slide">Back</a>
+				<a data-role="button" href="#home" class="ui-btn-right" data-icon="home" data-iconpos="right" data-transition="flip">Home</a>
+				<h1>Helpful Links</h1>
+			</div>
+		<div data-role="footer" data-id="foo1" data-position="fixed">
+			<div data-role="navbar" data-iconpos="top">
+				<ul>
+					<li><a href="#profile" data-icon="gear">Profile</a></li>
+					<li><a href="#waterTest" data-icon="info">Water Test</a></li>
+					<li><a href="#logBook" data-icon="edit">Log Book</a></li>
+					<li><a href="#" data-icon="star" class="ui-btn-active ui-state-persist">Wish List</a></li>
+					<li><a href="#gallery" data-icon="bars">Gallery</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->
+			<div data-role="content">   
+				<p>Links Content Here...</p>
+			</div>
+		</div><!-- page -->
+		
+<!-- ----------------------------- Audio ------------------------------------------------------------------------------------------------------- -->		
+		
+			<!-- drip -->
+			<audio id="drip" preload="auto" style="display:none;">
+				<source src="audio/drip.mp3" type="audio/mp3" />
+			</audio>
+			
+			
+<!-- ----------------------------- Scripts ----------------------------------------------------------------------------------------------------- -->
+			
+			<script>
+				var db = openDatabase ("Test", "1.0", "Test", 65535);
+
+<!-- ----------------------------- Audio function ---------------------------------------------------------------------------------------------- -->				
+				$(function(){
+					var $dripSound = $("#drip");
+					$("#btn_WaterTest, #btn_LogBook, #btn_Profile, #btn_Gallery, #btn_Links").on("tap", function (){
+						$dripSound.trigger("play");
+					});
+				}); 
+
+<!-- ----------------------------- Water Test ------------------------------------------------------------------------------------------------- -->				
+				
+				<!-- Create New Table -->
+				$("#createWaterTest").bind ("click", function (event){
+					db.transaction (function (transaction){
+						var sql = "CREATE TABLE testResults " +
+						" (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
+						"date VARCHAR(100) NOT NULL, " +
+						"salinity VARCHAR(100) NOT NULL, " + 
+						"ph VARCHAR(100) NOT NULL, " +
+						"ammonia VARCHAR(100) NOT NULL, " +
+						"nitrite VARCHAR(100) NOT NULL, " +
+						"nitrate VARCHAR(100) NOT NULL, " +
+						"dkh VARCHAR(100) NOT NULL, " + 
+						"calcium VARCHAR(100) NOT NULL)"
+						transaction.executeSql (sql, undefined, function (){ 
+							alert ("Table created");
+						}, error);
+					});
+				});
+				
+				<!-- Delete Table -->
+				$("#deleteWaterTest").bind ("click", function (event){
+					if (!confirm ("Delete test history?", "")) return;;
+					db.transaction (function (transaction){
+						var sql = "DROP TABLE testResults";
+						transaction.executeSql (sql, undefined, ok, error);
+					});
+				});
+				
+				<!-- Check for table, creates, and displays -->
+				$("#waterTest").live ("pageinit", function (){
+					db.transaction (function (transaction){
+						var sql = "CREATE TABLE IF NOT EXISTS testResults " +
+						" (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
+						"date VARCHAR(100) NOT NULL, " +
+						"salinity VARCHAR(100) NOT NULL, " + 
+						"ph VARCHAR(100) NOT NULL, " +
+						"ammonia VARCHAR(100) NOT NULL, " +
+						"nitrite VARCHAR(100) NOT NULL, " +
+						"nitrate VARCHAR(100) NOT NULL, " +
+						"dkh VARCHAR(100) NOT NULL, " + 
+						"calcium VARCHAR(100) NOT NULL)"
+						transaction.executeSql (sql, undefined);
+			
+						var sqlResult = "SELECT * FROM testResults";
+
+						transaction.executeSql (sqlResult, undefined, 
+						function (transaction, result){
+							var tHeader = "<thead>";
+							var tBody = "<tbody>";
+							var noData = "There are no results to display.";
+							if (result.rows.length){
+								tHeader += "<tr>" +
+										"<th scope='col'>Date</th>" +
+										"<th scope='col'>Sal</th>" +
+										"<th scope='col'>ph</th>" +
+										"<th scope='col'>NH3</th>" +
+										"<th scope='col'>NO2</th>" +
+										"<th scope='col'>NO3</th>" +
+										"<th scope='col'>dkh</th>" +
+										"<th scope='col'>Ca</th>" +
+										"<tr></thead>";
+								for (var i = 0; i < result.rows.length; i++){
+									var row = result.rows.item (i);
+									var date = row.date;
+									var salinity = row.salinity;
+									var ph = row.ph;
+									var ammonia = row.ammonia;
+									var nitrite = row.nitrite;
+									var nitrate = row.nitrate;
+									var dkh = row.dkh;
+									var calcium = row.calcium;
+									tBody += "<tr><td>" + date + 
+										"</td><td>" + salinity + 
+										"</td><td>" + ph + 
+										"</td><td>" + ammonia + 
+										"</td><td>" + nitrite + 
+										"</td><td>" + nitrate + 
+										"</td><td>" + dkh + 
+										"</td><td>" + calcium + 
+										"</td></tr></tbody>";
+								}
+							}   
+			
+							var $content1 = $("#waterTest table:jqmData(role=table)");
+							$content1.html (tHeader + tBody);
+							var $table = $content1.find ("table");
+							$table.listview ();
+						}, error);
+					});
+				});	
+					
+				<!-- Add New Row To Table -->
+				$("#newTestResult").bind ("click", function (event){
+					var date = $("#date").val ();
+					var salinity = $("#salinity").val ();
+					var ph = $("#ph").val();
+					var ammonia = $("#ammonia").val();
+					var nitrite = $("#nitrite").val();
+					var nitrate = $("#nitrate").val();
+					var dkh = $("#dkh").val();
+					var calcium = $("#calcium").val();
+		
+					db.transaction (function (transaction){
+						var sqlInsert = "INSERT INTO testResults " +
+							"(date, salinity, ph, ammonia, nitrite, nitrate, dkh, calcium)" +
+							"VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+						transaction.executeSql (sqlInsert, [date, salinity, ph, ammonia, nitrite, nitrate, dkh, calcium], function (){ 
+							alert ("Test Results Updated");
+						}, error);
+					});
+	
+					db.transaction (function (transaction){
+						var sqlResult = "SELECT * FROM testResults";
+						transaction.executeSql (sqlResult, undefined, 
+						function (transaction, result){
+							var tHeader = "<thead>";
+							var tBody = "<tbody>";
+							var noData = "<p>There are no results to display.</p>";
+							if (result.rows.length){
+								tHeader += "<tr>" +
+										"<th scope='col'>Date</th>" +
+										"<th scope='col'>Sal</th>" +
+										"<th scope='col'>ph</th>" +
+										"<th scope='col'>NH3</th>" +
+										"<th scope='col'>NO2</th>" +
+										"<th scope='col'>NO3</th>" +
+										"<th scope='col'>dkh</th>" +
+										"<th scope='col'>Ca</th>" +
+										"<tr></thead>";
+								for (var i = 0; i < result.rows.length; i++){
+									var row = result.rows.item (i);
+									var date = row.date;
+									var salinity = row.salinity;
+									var ph = row.ph;
+									var ammonia = row.ammonia;
+									var nitrite = row.nitrite;
+									var nitrate = row.nitrate;
+									var dkh = row.dkh;
+									var calcium = row.calcium;
+									tBody += "<tr><td>" + date + 
+										"</td><td>" + salinity + 
+										"</td><td>" + ph + 
+										"</td><td>" + ammonia + 
+										"</td><td>" + nitrite + 
+										"</td><td>" + nitrate + 
+										"</td><td>" + dkh + 
+										"</td><td>" + calcium + 
+										"</td></tr></tbody>";
+								}
+							}
+							else{
+								noData;
+							}    
+				
+							$("#waterTest").unbind ().bind ("pagebeforeshow", function (){
+								var $content = $("#waterTest table:jqmData(role=table)");
+								$content.html (tHeader + tBody);
+								var $table = $content.find ("table");
+								$table.listview ();
+							});
+       
+							$.mobile.changePage ($("#waterTest"));
+						}, error);
+					});
+				});
+
+<!-- -------------------- Log Book ------------------------------------------------------------------------------------------------------ -->				
+				
+				<!-- Create New Table -->
+				$("#createLog").bind ("click", function (event){
+					db.transaction (function (transaction){
+						var sql = "CREATE TABLE logBook " +
+							" (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
+							"logDate VARCHAR(100) NOT NULL, " +
+							"newLog VARCHAR(100) NOT NULL)"
+						transaction.executeSql (sql, undefined, function (){ 
+							alert ("Table created");
+						}, error);
+					});
+				}); 
+	
+				<!-- Delete Table -->
+				$("#deleteLog").bind ("click", function (event){
+					if (!confirm ("Delete log history?", "")) return;;
+						db.transaction (function (transaction){
+							var sql = "DROP TABLE logBook";
+							transaction.executeSql (sql, undefined, ok, error);
+					});
+				});
+	
+				<!-- Checks for table, creates, and displays -->
+				$("#logBook").live ("pageinit", function (){
+					db.transaction (function (transaction){
+						var sql = "CREATE TABLE IF NOT EXISTS logBook " +
+							" (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
+							"logDate VARCHAR(100) NOT NULL, " +
+							"newLog VARCHAR(100) NOT NULL)"
+			
+						transaction.executeSql (sql, undefined);
+						var sqlResult = "SELECT * FROM logBook";
+						transaction.executeSql (sqlResult, undefined, 
+						function (transaction, result){
+							var tHeader = "<thead>";
+							var tBody = "<tbody>";
+							var noData = "There are no logs to display.";
+							if (result.rows.length){
+								tHeader += "<tr><th scope='col'>Date</th><th scope='col'>Log</th></tr></thead>";
+								for (var i = 0; i < result.rows.length; i++){
+									var row = result.rows.item (i);
+									var logDate = row.logDate;
+									var newLog = row.newLog;
+									tBody += "<tr><td>" + logDate + "</td><td>" + newLog + "</td></tr></tbody>";
+								}
+							}   
+			
+							var $content1 = $("#logBook table:jqmData(role=table)");
+							$content1.html (tHeader + tBody);
+							var $table1 = $content1.find ("table");
+							$table1.listview ();
+						}, error);
+					});
+				});
+	
+				$("#logBookResult").bind ("click", function (event){
+					var logDate = $("#logDate").val ();
+					var newLog = $("#newLog").val ();
+		
+					db.transaction (function (transaction){
+						var sqlInsert = "INSERT INTO logBook (logDate, newLog) VALUES (?, ?)";
+						transaction.executeSql (sqlInsert, [logDate, newLog], function (){ 
+							alert ("Log Book Updated");
+						}, error);
+					});
+	
+					<!-- Display Log Table -->
+					db.transaction (function (transaction){
+						var sqlResult = "SELECT * FROM logBook";
+						transaction.executeSql (sqlResult, undefined, 
+						function (transaction, result){
+							var tHeader = "<thead>";
+							var tBody = "<tbody>";
+							var noData = "<p>There are no logs to display.</p>";
+							if (result.rows.length){
+								tHeader += "<tr><th scope='col'>Date</th><th scope='col'>Log</th></tr></thead>";
+								for (var i = 0; i < result.rows.length; i++){
+									var row = result.rows.item (i);
+									var logDate = row.logDate;
+									var newLog = row.newLog;
+									tBody += "<tr><td>" + logDate + "</td><td>" + newLog + "</td></tr></tbody>";
+								}
+							}  
+				
+							<!-- Load Table -->
+							$("#logBook").unbind ().bind ("pagebeforeshow", function (){
+								var $content = $("#logBook table:jqmData(role=table)");
+								$content.html (tHeader + tBody);
+								var $table = $content.find ("table");
+								$table.listview ();
+							});
+       
+							$.mobile.changePage ($("#logBook"));
+      
+						}, error);
+					});
+				});
+				
+
+				function ok (){
+				}
+
+				function error (transaction, err){
+					alert ("DB error : " + err.message);
+					return false;
+				}
+
+			</script> 
+		
+
+		
+	</body>
+</html>
+		
