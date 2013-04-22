@@ -1,34 +1,82 @@
 /* Aqualog css */
-h1{
-	color:white;
-	text-align:center;
+h1 {
+	color: white;
+	text-align: center;
 }
 
-table, tr{
-	width:100%;
-	margin:auto;
-	text-align:center;
-	word-wrap:break-word;
+tbody tr:nth-child(odd) {
+	background-color: white;
+	border: 1px solid black;
 }
 
-thead{
-	background-color:#1B56E0;
-	color:white;
-	text-align:center;
+table, tr {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	word-wrap: break-word;
 }
 
-tbody tr:nth-child(odd){
-	background-color:white;
-	border:1px solid black;
+thead {
+	background-color: #1B56E0;
+	color: white;
+	text-align: center;
 }
 
 .button {
-  width: 25px;
-  height: 25px;
+	width: 25px;
+	height: 25px;
+}
+
+.profileTest {
+	margin: 4px 2px 4px 2px;
+	position: relative;
+	z-index: 10;
+	border: 1px solid #4D4D4D;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color:rgba(255,255,255,0.6);
+}
+
+
+
+#baselineInfoTable tbody tr{
+	font-size: 20pt;
+	text-align: left;
+	margin: 10px 10px 10px 10px;
+	background-color: rgba(255,255,255,0.1);
+}
+
+#logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#profileImage {
+	width: 80%;
+	height: 40%;
+}
+
+#profileInfoContainer {
+	margin: 10px 10px 10px 10px;
+}
+
+#profileInfoLeft {
+
+}
+
+#profileInfoRight {
+
 }
 
 #rndBubble {
    background: url('/images/CircleDrop.jpg') no-repeat;       
+}
+
+#waterTestInfo {
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 /*
